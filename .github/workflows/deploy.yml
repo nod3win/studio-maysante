@@ -1,0 +1,9 @@
+name: Deploy
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+jobs:
+  studio-maysante:
+    uses: nod3win/.github/.github/workflows/vpsctl-deploy.yml@main
+    with: { app: studio-maysante, type: static, static-dir: dist }
+    secrets: inherit
